@@ -16,7 +16,7 @@ FROM alpine:3.20.2
 ARG KUBECTL_VERSION="v1.29.0"
 
 COPY --from=build /k9s/execs/k9s /bin/k9s
-RUN apk add --update ca-certificates \
+RUN apk add --update ca-certificates aws-cli \
   && apk add --update -t deps curl vim \
   && TARGET_ARCH=$(arch | sed s/aarch64/arm64/ | sed s/x86_64/amd64/) \
   && curl -L https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/${TARGET_ARCH}/kubectl -o /usr/local/bin/kubectl \

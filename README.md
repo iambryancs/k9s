@@ -215,6 +215,10 @@ Binaries for Linux, Windows and Mac are available as tarballs in the [release pa
   docker run --rm -it -v ~/.kube/config:/root/.kube/config k9s-docker:0.1
   ```
 
+  Run and utilize aws-cli for client authentication:
+  ```shell
+  docker run --rm -it -v ~/.kube/config:/root/.kube/config -v ~/.aws:/root/.aws k9s-docker:0.1
+  ```
 ---
 
 ## PreFlight Checks
